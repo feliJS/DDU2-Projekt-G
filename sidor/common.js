@@ -19,8 +19,8 @@ const numBoxesDOM = document.querySelector("#num-boxes")
 function autoFill(amount) {
     for (let i = 0; i < amount; i++) {
         createBox();
-        handleCreation();
     }
+    handleCreation();
 }
 autoFill(95);
 
