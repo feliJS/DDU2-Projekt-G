@@ -6,6 +6,8 @@ function mostRepNums() {
     const boxesDOM = document.querySelectorAll(".box")
     let counterArray = [];
     let counter = 0;
+    let mostRepeatedTimes = 0;
+
     for (let i = 0; i < boxesDOM.length; i++) {
         counter = 0;
         for (let x = 0; x < boxesDOM.length; x++) {
@@ -13,9 +15,17 @@ function mostRepNums() {
                 counter++
             }
         }
-        counterArray.push(counter)
+        if (counter > mostRepeatedTimes) {
+            mostRepeatedTimes = counter;
+            counterArray = [boxesDOM[i].textContent];
+        }
+
+        else if (counter == mostRepeatedTimes && !counterArray.includes(boxesDOM[i].textContent)) {
+            counterArray.push(boxesDOM[i].textContent);
+        }
+
     }
-    return counterArray;
+    return { Count: mostRepeatedTimes, RepeatedNums: counterArray };
 }
 
 function handleCreation() {
