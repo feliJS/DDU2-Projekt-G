@@ -20,7 +20,6 @@ function autoFill(amount) {
     for (let i = 0; i < amount; i++) {
         createBox();
         handleCreation();
-
     }
 }
 autoFill(95);
@@ -28,4 +27,6 @@ autoFill(95);
 document.querySelector("#create-nums button").addEventListener("click", () => {
     numBoxesDOM.innerHTML = "";
     autoFill(parseInt(inputDOM.value))
+
 })
+
