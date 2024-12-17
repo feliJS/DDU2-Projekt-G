@@ -30,3 +30,4 @@ document.querySelector("#create-nums button").addEventListener("click", () => {
 
 })
 
+console.log();

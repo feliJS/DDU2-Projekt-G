@@ -1,10 +1,9 @@
-function handleBox(numBoxDOM) {
-
-}
+function handleBox(numBoxDOM) {/* nothing */ }
 
 function mostRepNums() {
     const boxesDOM = document.querySelectorAll(".box")
-    let counterArray = [];
+    let counterArray = []; //TODO: change variable name (and dont forget to remove 0 from possible boxes)
+    let counterArrayDOMS = [];// here too
     let counter = 0;
     let mostRepeatedTimes = 0;
 
@@ -18,17 +17,32 @@ function mostRepNums() {
         if (counter > mostRepeatedTimes) {
             mostRepeatedTimes = counter;
             counterArray = [boxesDOM[i].textContent];
+            counterArrayDOMS = [boxesDOM[i]];
         }
 
-        else if (counter == mostRepeatedTimes && !counterArray.includes(boxesDOM[i].textContent)) {
-            counterArray.push(boxesDOM[i].textContent);
+        else if (counter == mostRepeatedTimes) {
+            if (!counterArray.includes(boxesDOM[i].textContent)) {
+                counterArray.push(boxesDOM[i].textContent);
+            }
+            counterArrayDOMS.push(boxesDOM[i]);
         }
-
     }
-    return { Count: mostRepeatedTimes, RepeatedNums: counterArray };
+    return { Count: mostRepeatedTimes, RepeatedNums: counterArray, RepeatedNumsDOMS: counterArrayDOMS };
 }
 
+
+
 function handleCreation() {
-    return console.log(mostRepNums())
+    const mostRepDOM = document.querySelector("#most-repeated .border-text-box")
+    const mostRepeatedNumbersObj = mostRepNums();
+    if (mostRepeatedNumbersObj.Count <= 1) {
+        mostRepDOM.textContent = "Nothing repeats"
+    }
+    else {
+        mostRepDOM.textContent = `${mostRepeatedNumbersObj.RepeatedNums} (Repeated ${mostRepeatedNumbersObj.Count} times)`
+        for (let i = 0; i < mostRepeatedNumbersObj.RepeatedNumsDOMS.length; i++) {
+            mostRepeatedNumbersObj.RepeatedNumsDOMS[i].classList.add("repeated")
+        }
+    }
 }
 
