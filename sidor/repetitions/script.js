@@ -1,8 +1,8 @@
-function handleBox(numBoxDOM) {/* nothing */ }
+function handleBox(numBoxDOM) {/*nothng*/ }
 
 function mostRepNums() {
     const boxesDOM = document.querySelectorAll(".box")
-    let counterArray = []; //TODO: change variable name (and dont forget to remove 0 from possible boxes)
+    let counterArray = []; //TODO: change variable name 
     let counterArrayDOMS = [];// here too
     let counter = 0;
     let mostRepeatedTimes = 0;
@@ -30,6 +30,24 @@ function mostRepNums() {
     return { Count: mostRepeatedTimes, RepeatedNums: counterArray, RepeatedNumsDOMS: counterArrayDOMS };
 }
 
+function getMissingNums() {
+    let missingNums = []
+    const boxesDOM = document.querySelectorAll(".box")
+    for (let i = 0; i < 100; i++) {
+        let found = false;
+        for (let x = 0; x < boxesDOM.length; x++) {
+            if (boxesDOM[x].textContent == i) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            missingNums.push(i)
+        }
+    }
+    return missingNums
+
+}
 
 
 function handleCreation() {
@@ -44,5 +62,10 @@ function handleCreation() {
             mostRepeatedNumbersObj.RepeatedNumsDOMS[i].classList.add("repeated")
         }
     }
+
+    const missingNumsDOM = document.querySelector("#nums-not-there .border-text-box")
+    const missingNumsArray = getMissingNums();
+    missingNumsDOM.textContent = `${missingNumsArray}`
 }
+
 
