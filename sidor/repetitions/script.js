@@ -2,8 +2,8 @@ function handleBox(numBoxDOM) {/*nothng*/ }
 
 function mostRepNums() {
     const boxesDOM = document.querySelectorAll(".box")
-    let counterArray = []; //TODO: change variable name 
-    let counterArrayDOMS = [];// here too
+    let mostFrequentNumbers = []; //TODO: change variable name 
+    let mostFrequentElements = [];// here too
     let counter = 0;
     let mostRepeatedTimes = 0;
 
@@ -16,18 +16,18 @@ function mostRepNums() {
         }
         if (counter > mostRepeatedTimes) {
             mostRepeatedTimes = counter;
-            counterArray = [boxesDOM[i].textContent];
-            counterArrayDOMS = [boxesDOM[i]];
+            mostFrequentNumbers = [boxesDOM[i].textContent];
+            mostFrequentElements = [boxesDOM[i]];
         }
 
         else if (counter == mostRepeatedTimes) {
-            if (!counterArray.includes(boxesDOM[i].textContent)) {
-                counterArray.push(boxesDOM[i].textContent);
+            if (!mostFrequentNumbers.includes(boxesDOM[i].textContent)) {
+                mostFrequentNumbers.push(boxesDOM[i].textContent);
             }
-            counterArrayDOMS.push(boxesDOM[i]);
+            mostFrequentElements.push(boxesDOM[i]);
         }
     }
-    return { Count: mostRepeatedTimes, RepeatedNums: counterArray, RepeatedNumsDOMS: counterArrayDOMS };
+    return { Count: mostRepeatedTimes, RepeatedNums: mostFrequentNumbers, RepeatedNumsDOMS: mostFrequentElements };
 }
 
 function getMissingNums() {
@@ -51,7 +51,7 @@ function getMissingNums() {
 
 
 function handleCreation() {
-    const mostRepDOM = document.querySelector("#most-repeated .border-text-box")
+    const mostRepDOM = document.querySelector("#most-repeated .info-box")
     const mostRepeatedNumbersObj = mostRepNums();
     if (mostRepeatedNumbersObj.Count <= 1) {
         mostRepDOM.textContent = "Nothing repeats"
@@ -63,7 +63,7 @@ function handleCreation() {
         }
     }
 
-    const missingNumsDOM = document.querySelector("#nums-not-there .border-text-box")
+    const missingNumsDOM = document.querySelector("#nums-not-there .info-box")
     const missingNumsArray = getMissingNums();
     missingNumsDOM.textContent = `${missingNumsArray}`
 }

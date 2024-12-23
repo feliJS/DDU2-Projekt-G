@@ -1,7 +1,7 @@
 function handleBox(numBoxDOM) {
     numBoxDOM.addEventListener("click", () => {
         numBoxDOM.classList.add("target")
-        document.querySelector("#sum-of-marked .border-text-box").textContent = sumOfBoxes(document.querySelectorAll(".target"))
+        document.querySelector("#sum-of-target .info-box").textContent = sumOfBoxes(document.querySelectorAll(".target"))
     })
 }
 
@@ -14,14 +14,14 @@ function sumOfBoxes(boxList) {
 }
 
 function handleCreation() {
-    document.querySelector("#sum-of-all .border-text-box").textContent = sumOfBoxes(document.querySelectorAll(".box"))
+    document.querySelector("#sum-of-all .info-box").textContent = sumOfBoxes(document.querySelectorAll(".box"))
 }
 
-const resetButtonDOM = document.querySelector("#sum-of-marked button")
+const resetButtonDOM = document.querySelector("#sum-of-target button")
 resetButtonDOM.addEventListener("click", () => {
     const targetClassList = document.querySelectorAll(".target")
     for (let i = 0; i < targetClassList.length; i++) {
         targetClassList[i].classList.remove("target")
     }
-    document.querySelector("#sum-of-marked .border-text-box").textContent = "-"
+    document.querySelector("#sum-of-target .info-box").textContent = "-"
 })
