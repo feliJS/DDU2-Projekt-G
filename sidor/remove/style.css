@@ -1,3 +1,4 @@
 .box:hover{background-color: #f9e7cf;}
 #rand-num-box{margin-bottom: 10px;}
 #removal-count{padding: 0px 80px;}
+.marked{background-color: orange;}
