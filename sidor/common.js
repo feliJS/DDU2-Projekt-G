@@ -1,4 +1,6 @@
-
+function randomNum(min, max) { //min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function createBox() {
     const numBoxDOM = document.createElement("div")
@@ -6,7 +8,7 @@ function createBox() {
     numBoxDOM.style.display = "flex"
     numBoxDOM.style.justifyContent = "center"
     numBoxDOM.style.alignItems = "center"
-    numBoxDOM.textContent = Math.floor(100 * Math.random())
+    numBoxDOM.textContent = randomNum(0, 100)
     handleBox(numBoxDOM) //handles in each file
     numBoxesDOM.appendChild(numBoxDOM)
 }
@@ -16,6 +18,16 @@ function autoFill(amount) {
         createBox();
     }
     handleCreation();
+}
+
+function markNum(num) { //marks numbers with colors used in remove and findSame
+    const boxes = document.querySelectorAll(".box")
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].classList.remove("marked")
+        if (boxes[i].textContent == num) {
+            boxes[i].classList.add("marked")
+        }
+    }
 }
 
 const homeLinkDOM = document.createElement("a")
