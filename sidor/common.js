@@ -11,6 +11,13 @@ function createBox() {
     numBoxesDOM.appendChild(numBoxDOM)
 }
 
+function autoFill(amount) {
+    for (let i = 0; i < amount; i++) {
+        createBox();
+    }
+    handleCreation();
+}
+
 const homeLinkDOM = document.createElement("a")
 homeLinkDOM.setAttribute("href", "../index.html")
 homeLinkDOM.textContent = "Home"
@@ -20,7 +27,7 @@ const createTextInfoDOM = document.createElement("p")
 createTextInfoDOM.textContent = "How many numbers in the grid?"
 document.getElementById("create-nums").appendChild(createTextInfoDOM)
 
- 
+
 const inputDOM = document.createElement("input")
 inputDOM.setAttribute("type", "text")
 document.getElementById("create-nums").appendChild(inputDOM)
@@ -32,12 +39,6 @@ document.getElementById("create-nums").appendChild(createButtonDOM)
 
 const numBoxesDOM = document.querySelector("#num-boxes")
 
-function autoFill(amount) {
-    for (let i = 0; i < amount; i++) {
-        createBox();
-    }
-    handleCreation();
-}
 autoFill(95);
 
 document.querySelector("#create-nums button").addEventListener("click", () => {
@@ -45,5 +46,3 @@ document.querySelector("#create-nums button").addEventListener("click", () => {
     autoFill(parseInt(inputDOM.value))
 
 })
-
-console.log();
