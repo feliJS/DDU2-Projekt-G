@@ -1,0 +1,15 @@
+.box:hover {
+    background-color: lightblue;
+}
+
+.target:hover {
+    background-color: orange;
+}
+
+.target {
+    background-color: red;
+}
+
+#fill-clear button {
+    margin-bottom: 10px;
+}

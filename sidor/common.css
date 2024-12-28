@@ -1,12 +1,12 @@
-
-.center{
+/*lägg in valfri font!*/
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.box{
+.box {
     background-color: grey;
     font-size: 20px;
     border-radius: 10px;
@@ -14,13 +14,13 @@
     width: 40px;
 }
 
-#num-boxes{
+#num-boxes {
     display: grid;
     grid-template-columns: repeat(auto-fill, 40px);
     gap: 5px;
 }
 
-.info-box{
+.info-box {
     border: 1px solid black;
     padding: 0px 30px;
 }
