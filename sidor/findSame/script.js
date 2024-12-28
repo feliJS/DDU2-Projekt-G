@@ -1,13 +1,12 @@
+function handleCreation() {/*nothing*/ }
+
+
 function handleBox(numBoxDOM) {
     numBoxDOM.addEventListener("click", () => {
         numBoxDOM.classList.add("marked")
         markNum(numBoxDOM.textContent) //from common.js
         updateText()
     })
-}
-
-function handleCreation() {
-
 }
 
 function updateText() {
