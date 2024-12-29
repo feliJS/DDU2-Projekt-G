@@ -28,3 +28,15 @@ function addsUp(sumNum) {
     }
 }
 
+
+const findCellsBtn = document.querySelector("#add-up-section button")
+
+findCellsBtn.addEventListener("click", ()=>{
+    const boxes = document.querySelectorAll(".box")
+    for (let i = 0; i < boxes.length; i++) { //make this into function in common.js this gets used in clear as well the same way
+        if (boxes[i].classList.contains("addUpCell")) {
+            boxes[i].classList.remove("addUpCell")
+        }
+    }
+    addsUp(document.querySelector("#add-up-section input").value)
+})
