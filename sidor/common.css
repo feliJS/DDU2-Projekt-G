@@ -1,4 +1,12 @@
-/*lägg in valfri font!*/
+@font-face {
+    font-family: chewy;
+    src: url("Chewy-Regular.ttf");
+}
+
+* {
+    font-family: chewy;
+}
+
 .center {
     display: flex;
     justify-content: center;

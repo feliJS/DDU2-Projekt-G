@@ -1,4 +1,4 @@
-function randomNum(min, max) { //min and max included
+function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -9,7 +9,7 @@ function createBox() {
     numBoxDOM.style.justifyContent = "center"
     numBoxDOM.style.alignItems = "center"
     numBoxDOM.textContent = randomNum(0, 100)
-    handleBox(numBoxDOM) //handles in each file
+    handleBox(numBoxDOM)
     numBoxesDOM.appendChild(numBoxDOM)
 }
 
@@ -20,7 +20,7 @@ function autoFill(amount) {
     handleCreation();
 }
 
-function markNum(num) { //marks numbers with colors used in remove and findSame
+function markNum(num) {
     const boxes = document.querySelectorAll(".box")
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].classList.remove("marked")
