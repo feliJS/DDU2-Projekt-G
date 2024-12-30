@@ -2,11 +2,11 @@
     background-color: lightblue;
 }
 
-.target:hover {
+.marked:hover {
     background-color: orange;
 }
 
-.target {
+.marked {
     background-color: red;
 }
 

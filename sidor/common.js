@@ -30,6 +30,18 @@ function markNum(num) {
     }
 }
 
+function removeClassFromAll(otherBoxModifyFunc) {
+    const boxes = document.querySelectorAll(".box")
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].classList.contains("marked")) {
+            boxes[i].classList.remove("marked")
+            if (otherBoxModifyFunc) {
+                otherBoxModifyFunc(boxes[i])
+            }
+        }
+    }
+}
+
 const homeLinkDOM = document.createElement("a")
 homeLinkDOM.setAttribute("href", "../index.html")
 homeLinkDOM.textContent = "Home"
