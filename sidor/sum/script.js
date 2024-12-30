@@ -1,7 +1,7 @@
 function handleBox(numBoxDOM) {
     numBoxDOM.addEventListener("click", () => {
         numBoxDOM.classList.add("marked")
-        document.querySelector("#sum-of-marked .info-box").textContent = sumOfBoxes(document.querySelectorAll(".marked"))
+        sumOfMarkedInfoBox.textContent = sumOfBoxes(document.querySelectorAll(".marked"))
     })
 }
 
@@ -14,11 +14,13 @@ function sumOfBoxes(boxList) {
 }
 
 function handleCreation() {
-    document.querySelector("#sum-of-all .info-box").textContent = sumOfBoxes(document.querySelectorAll(".box"))
+    sumOfAllInfoBox.textContent = sumOfBoxes(document.querySelectorAll(".box"))
 }
 
+const sumOfMarkedInfoBox = document.querySelector("#sum-of-marked .info-box")
+const sumOfAllInfoBox = document.querySelector("#sum-of-all .info-box")
 const resetButtonDOM = document.querySelector("#sum-of-marked button")
 resetButtonDOM.addEventListener("click", () => {
     removeClassFromAll();
-    document.querySelector("#sum-of-marked .info-box").textContent = "-"
+    sumOfMarkedInfoBox.textContent = "-"
 })
