@@ -1,4 +1,4 @@
-function handleBox(numBoxDOM) { //also here, target class gets thrown around alot should i change it somehow not to be too repetitive??
+function handleBox(numBoxDOM) { //also here, marked class gets thrown around alot should i change it somehow not to be too repetitive??
     numBoxDOM.addEventListener("click", () => {
         if (numBoxDOM.classList.contains("marked")) {
             numBoxDOM.classList.remove("marked")
