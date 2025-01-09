@@ -2,7 +2,7 @@ function handleBox(numBoxDOM) {/*nothing*/ }
 
 function mostRepNums() {
     const boxesDOM = document.querySelectorAll(".box")
-    let mostFrequentNumbers = []; 
+    let mostFrequentNumbers = [];
     let mostFrequentElements = [];
     let counter = 0;
     let mostRepeatedTimes = 0;

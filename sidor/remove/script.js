@@ -1,5 +1,5 @@
-function handleBox(numBoxDOM) {/*nothing*/ }
-function handleCreation() {/*nothing*/ }
+function handleBox() { }
+function handleCreation() { }
 
 function removeNum() {
     let allMarkedDOMS = document.querySelectorAll(".marked")
@@ -25,6 +25,4 @@ randomNumberBtn.addEventListener("click", () => {
 });
 
 const removeNumbersBtn = document.getElementById("remove-number-btn");
-removeNumbersBtn.addEventListener("click", () => {
-    removeNum()
-});
+removeNumbersBtn.addEventListener("click", removeNum);
