@@ -18,7 +18,7 @@ const removalCountDOM = document.getElementById("removal-count")
 const randomNumberBtn = document.getElementById("generate-number-btn");
 
 randomNumberBtn.addEventListener("click", () => {
-    randomNumber = randomNum(0, 100);
+    randomNumber = randomNum(0, 99);
     document.getElementById("current-number").textContent = randomNumber;
     markNum(randomNumber)
     document.getElementById("removal-count").textContent = "-";

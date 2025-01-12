@@ -8,7 +8,7 @@ function createBox() {
     numBoxDOM.style.display = "flex"
     numBoxDOM.style.justifyContent = "center"
     numBoxDOM.style.alignItems = "center"
-    numBoxDOM.textContent = randomNum(0, 100)
+    numBoxDOM.textContent = randomNum(0, 99)
     handleBox(numBoxDOM)
     numBoxesDOM.appendChild(numBoxDOM)
 }

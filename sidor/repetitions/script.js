@@ -33,7 +33,7 @@ function mostRepNums() {
 function getMissingNums() {
     let missingNums = []
     const boxesDOM = document.querySelectorAll(".box")
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 99; i++) {
         let found = false;
         for (let x = 0; x < boxesDOM.length; x++) {
             if (boxesDOM[x].textContent == i) {
