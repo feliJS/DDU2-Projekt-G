@@ -1,4 +1,4 @@
-function handleCreation() {/*nothing*/ }
+function handleCreation() { }
 
 
 function handleBox(numBoxDOM) {

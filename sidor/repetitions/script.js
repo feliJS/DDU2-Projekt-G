@@ -1,4 +1,4 @@
-function handleBox(numBoxDOM) {/*nothing*/ }
+function handleBox(numBoxDOM) {}
 
 function mostRepNums() {
     const boxesDOM = document.querySelectorAll(".box")

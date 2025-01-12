@@ -1,4 +1,4 @@
-function handleBox(numBoxDOM) { //also here, marked class gets thrown around alot should i change it somehow not to be too repetitive??
+function handleBox(numBoxDOM) {
     numBoxDOM.addEventListener("click", () => {
         if (numBoxDOM.classList.contains("marked")) {
             numBoxDOM.classList.remove("marked")
@@ -11,9 +11,7 @@ function handleBox(numBoxDOM) { //also here, marked class gets thrown around alo
     })
 }
 
-function handleCreation() {/*nothing*/ }
-
-//could argue that the function bellow is already used in findSame? anyway i could fix so that they are different?
+function handleCreation() {}
 const fillClearedBtn = document.querySelector("#fill-clear button")
 fillClearedBtn.addEventListener("click", () => {
     removeClassFromAll((box) => { box.textContent = randomNum(0, 99) })
